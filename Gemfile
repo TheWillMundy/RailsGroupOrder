@@ -65,3 +65,5 @@ gem 'fog-aws'
 gem 'figaro'
 #Image Resizing
 gem 'mini_magick'
+#Logins
+gem 'devise'
