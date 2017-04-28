@@ -53,7 +53,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
+#Added for Heroku Deploy
 gem 'rails_12factor', group: :production
-
+#Adds postgresql for Heroku
 gem 'pg', group: :production
+#Added for Images
+gem 'carrierwave'
+#For Amazon S3 / Other Cloud Services
+gem 'fog-aws'
+#Protecting Passwords
+gem 'figaro'
