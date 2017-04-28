@@ -63,3 +63,5 @@ gem 'carrierwave'
 gem 'fog-aws'
 #Protecting Passwords
 gem 'figaro'
+#Image Resizing
+gem 'mini_magick'
