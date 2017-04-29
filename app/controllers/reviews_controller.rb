@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_product
   before_action :authenticate_user!
 
   # GET /reviews/new
@@ -16,6 +17,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @review.product_id = @product.id
 
     respond_to do |format|
       if @review.save
@@ -56,6 +58,11 @@ class ReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
+    end
+
+    # Sets Restaurant Variable
+    def set_product
+      @product = Product.find(params[:product_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
