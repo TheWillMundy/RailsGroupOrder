@@ -6,6 +6,9 @@
     <%= @product.name %>
   </h2>
 
+  <div class="star-rating" data-score= <%= @average_rating %> ></div>
+  <p><%= "#{@reviews.length} reviews" %></p>
+
   <p>
     <strong>User:</strong>
     <%= @product.user %>
