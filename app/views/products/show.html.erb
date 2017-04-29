@@ -28,8 +28,20 @@
     <h3>No reviews yet. Be the First!</h3>
   <% else %>
     <% @reviews.each do |review| %>
-      <p><%= review.rating %></p>
+      <div class="star-rating" data-score= <%= review.rating %> ></div>
       <p><%= review.comment %></p>
     <% end %>
   <% end %>
 </div>
+
+<script>
+  $('.star-rating').raty(
+    {
+      path: 'https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.1/images',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      }
+    }
+  );
+</script>
