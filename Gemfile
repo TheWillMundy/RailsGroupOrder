@@ -67,3 +67,5 @@ gem 'figaro'
 gem 'mini_magick'
 #Logins
 gem 'devise'
+#Searches
+gem 'searchkick'
